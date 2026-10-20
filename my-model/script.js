@@ -4,7 +4,7 @@ const CONFIDENCE_THRESHOLD = 0.9;
 const students = {
     "Erika Leal": { age: 17, grade: "3° A", initials: "EL", label: "Erika Leal" },
     "Jeremy Torres": { age: 18, grade: "1° C", initials: "JT", label: "Jeremy Torres" },
-    "Carolina Elías": { age: 18, grade: "2° B", initials: "CE", label: "Carolina Elías" }
+    "Carolina Elias": { age: 18, grade: "2° B", initials: "CE", label: "Carolina Elías" }
 };
 
 const startButton = document.getElementById("start-button");
