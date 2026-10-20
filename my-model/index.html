@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f6f1">
+    <meta name="description" content="IDentify: reconocimiento estudiantil rápido, seguro y en el dispositivo.">
+    <title>IDentify — Reconocimiento estudiantil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main class="app-shell">
+        <header class="topbar">
+            <a class="brand" href="#" aria-label="IDentify, inicio">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <path d="M13 9H10a2 2 0 0 0-2 2v3m19-5h3a2 2 0 0 1 2 2v3M8 26v3a2 2 0 0 0 2 2h3m16-5v3a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="20" cy="17" r="4" stroke="currentColor" stroke-width="2"/>
+                        <path d="M13.5 27c1.2-3 3.4-4.5 6.5-4.5s5.3 1.5 6.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <span class="brand-name">ID<span>entify</span><small>SMART CAMPUS</small></span>
+            </a>
+            <div class="topbar-note"><span class="secure-dot"></span> Reconocimiento privado en tu dispositivo</div>
+        </header>
+
+        <section class="intro" aria-labelledby="page-title">
+            <div>
+                <p class="eyebrow"><span class="eyebrow-line"></span> DIRECTORIO ESTUDIANTIL <span>·</span> TURNO VESPERTINO</p>
+                <h1 id="page-title">Cada rostro<br><span>tiene una historia.</span></h1>
+                <p class="intro-copy">Identifica a tus estudiantes y recibe su credencial al instante.</p>
+            </div>
+            <div class="threshold-pill"><span class="threshold-icon" aria-hidden="true">✳</span><span>Precisión mínima</span><strong>90%</strong></div>
+        </section>
+
+        <section class="workspace" aria-label="Reconocimiento estudiantil">
+            <section class="panel camera-panel" aria-labelledby="camera-title">
+                <div class="panel-heading">
+                    <div>
+                        <p class="section-kicker">ESCÁNER EN VIVO</p>
+                        <h2 id="camera-title">Todo listo para comenzar</h2>
+                    </div>
+                    <span class="live-indicator" id="live-indicator"><span></span> INACTIVA</span>
+                </div>
+
+                <div class="camera-stage" id="camera-stage">
+                    <div class="camera-placeholder" id="camera-placeholder">
+                        <span class="camera-icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48" fill="none"><rect x="5" y="13" width="27" height="23" rx="5" stroke="currentColor" stroke-width="2"/><path d="m32 21 11-6v19l-11-6V21Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="18.5" cy="24.5" r="5.5" stroke="currentColor" stroke-width="2"/></svg>
+                        </span>
+                        <strong>Tu cámara aparecerá aquí</strong>
+                        <span>Colócate frente a la cámara para comenzar.</span>
+                    </div>
+                    <div id="webcam-container" class="webcam-container" aria-label="Live camera preview"></div>
+                    <div class="scan-corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+                </div>
+
+                <div class="camera-footer">
+                    <p id="scanner-message" role="status" aria-live="polite">Cámara apagada. El video permanece en este dispositivo.</p>
+                    <button type="button" class="start-button" id="start-button">
+                        <span aria-hidden="true">◎</span> Iniciar reconocimiento
+                    </button>
+                </div>
+                <div class="error-message" id="error-message" role="alert" hidden></div>
+            </section>
+
+            <section class="panel result-panel" aria-labelledby="result-title">
+                <div class="panel-heading">
+                    <div>
+                        <p class="section-kicker">IDENTIFICACIÓN</p>
+                        <h2 id="result-title">Credencial digital</h2>
+                    </div>
+                    <span class="shield-icon" aria-hidden="true">✓</span>
+                </div>
+                <div class="badge-slot" id="badge-slot" aria-live="polite">
+                    <div class="empty-badge" id="empty-badge">
+                        <div class="empty-avatar" aria-hidden="true"><span>?</span></div>
+                        <strong>Esperando identificación</strong>
+                        <span>La credencial aparecerá aquí al alcanzar una coincidencia del 90%.</span>
+                    </div>
+                    <article class="student-badge" id="student-badge" hidden>
+                        <div class="badge-topline"><span>ESTUDIANTE VERIFICADO</span><span class="verified-mark" aria-label="Verificado">✓</span></div>
+                        <div class="badge-person">
+                            <div class="badge-avatar" id="badge-avatar" aria-hidden="true"></div>
+                            <div><h3 id="badge-name"></h3><p>Estudiante · Turno vespertino</p></div>
+                        </div>
+                        <div class="badge-details">
+                            <div><span>EDAD</span><strong id="badge-age"></strong></div>
+                            <div><span>GRADO</span><strong id="badge-grade"></strong></div>
+                        </div>
+                        <div class="badge-bottom"><span>ID ESTUDIANTIL</span><span id="badge-confidence"></span></div>
+                    </article>
+                </div>
+                <div class="match-meter" aria-live="polite">
+                    <div class="meter-label"><span>Mejor coincidencia</span><strong id="best-match-label">Esperando cámara</strong></div>
+                    <div class="meter-track" role="progressbar" aria-label="Porcentaje de coincidencia" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="confidence-meter"><span id="confidence-fill"></span></div>
+                </div>
+            </section>
+        </section>
+
+        <section class="roster-section" aria-labelledby="roster-title">
+            <div class="roster-heading">
+                <div>
+                    <p class="section-kicker">TURNO VESPERTINO</p>
+                    <h2 id="roster-title">Estudiantes registrados <span id="roster-count">03</span></h2>
+                </div>
+                <p>Directorio del grupo</p>
+            </div>
+            <div class="roster-grid" id="roster-grid">
+                <article class="roster-card" data-student="Erika Leal">
+                    <div class="roster-avatar avatar-lilac">EL</div>
+                    <div class="roster-info"><h3>Erika Leal</h3><p>17 años <span>·</span> 3° A</p></div>
+                    <span class="roster-status"><i></i><span>Sin identificar</span></span>
+                </article>
+                <article class="roster-card" data-student="Jeremy Torres">
+                    <div class="roster-avatar avatar-mint">JT</div>
+                    <div class="roster-info"><h3>Jeremy Torres</h3><p>18 años <span>·</span> 1° C</p></div>
+                    <span class="roster-status"><i></i><span>Sin identificar</span></span>
+                </article>
+                <article class="roster-card" data-student="Carolina Elías">
+                    <div class="roster-avatar avatar-peach">CE</div>
+                    <div class="roster-info"><h3>Carolina Elías</h3><p>18 años <span>·</span> 2° B</p></div>
+                    <span class="roster-status"><i></i><span>Sin identificar</span></span>
+                </article>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            <span><span class="privacy-icon" aria-hidden="true">◈</span> El reconocimiento se procesa localmente en tu navegador.</span>
+            <span>La información se muestra solo con una coincidencia de 90% o más.</span>
+        </footer>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
