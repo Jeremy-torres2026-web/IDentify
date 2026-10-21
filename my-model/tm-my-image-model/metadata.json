@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"tfjsVersion":"1.7.4","tmVersion":"2.4.18","packageVersion":"0.8.4-alpha2","packageName":"@teachablemachine/image","timeStamp":"2026-10-21T13:49:31.556Z","userMetadata":{},"modelName":"tm-my-image-model","labels":["Jeremy Torres","Erika Leal","Carolina Elias","Nada"],"imageSize":224}
+=======
+{"tfjsVersion":"1.7.4","tmVersion":"2.4.18","packageVersion":"0.8.4-alpha2","packageName":"@teachablemachine/image","timeStamp":"2026-10-20T14:57:55.689Z","userMetadata":{},"modelName":"tm-my-image-model","labels":["Jeremy Torres","Erika Leal","Carolina Elias","Nada"],"imageSize":224}
+>>>>>>> df87aa265eeab812dd021909ab09972d719a8c89
