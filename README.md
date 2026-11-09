@@ -91,6 +91,8 @@ The repository currently contains example names and demographic details in its c
 
 El repositorio contiene actualmente nombres y datos demográficos de ejemplo en el código del cliente. Antes de utilizar este proyecto con estudiantes reales, obtén consentimiento informado, minimiza los datos personales, reemplaza los registros de ejemplo y revisa los requisitos de privacidad aplicables. No publiques datos ni imágenes identificables de estudiantes en un repositorio público.
 
-## Author / Autor
+## Team context / Contexto del equipo
 
-Jeremy Torres — [GitHub](https://github.com/Jeremy-MegaJS)
+This was a collaborative academic project. The repository preserves the team's prototype and should not be described as a solo project. The current commit history does not fully document every teammate's individual contribution.
+
+Fue un proyecto académico colaborativo. El repositorio conserva el prototipo del equipo y no debe describirse como un proyecto individual. El historial de commits actual no documenta por completo el aporte individual de cada compañero.
